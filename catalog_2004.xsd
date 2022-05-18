@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Schema declaration-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Schema for the root tag-->
+    <xs:element name="store">
+        <!-- ComplexType -> Element with child elements or one or more attributes-->
+        <xs:complexType>
+            <!-- Sequence -> Child element to appear in sequence-->
+            <xs:sequence>
+                <!-- Referencing elements-->
+                <xs:element ref="navigation"/>
+                <xs:element ref="details"/>
+                <xs:element ref="cards"/>
+                <xs:element ref="footer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Schema for the navigation tag-->
+    <xs:element name="navigation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="logo"/>
+                <!-- Element referencing with minumum and maximum occurence-->
+                <xs:element ref="nav" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Empty element-->
+    <xs:element name="logo"/>
+
+    <!-- Schema for nav tag-->
+    <xs:element name="nav">
+        <xs:complexType>
+            <!-- SimpleContent ->Element with attribute and text only-->
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <!-- Required attribute for name attribute-->
+                    <xs:attribute name="name" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Schema for details tag-->
+    <xs:element name="details">
+        <!--Element with both text and other elements-->
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="store_desc"/>
+                <xs:element ref="desc"/>
+                <xs:element ref="visits"/>
+                <xs:element ref="contacts"/>
+                <xs:element ref="email"/>
+                <xs:element ref="phone" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="link"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Schema for store_desc element tag-->
+    <xs:element name="store_desc">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="header" type="xs:string" fixed="title" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Schema for desc element tag-->
+    <xs:element name="desc" type="xs:string"/>
+
+    <!-- Schema for visits tag-->
+    <xs:element name="visits" type="xs:string"/>
+
+    <!-- Schema for contacts tag-->
+    <xs:element name="contacts" type="xs:string"/>
+
+    <!-- Schema for email tag-->
+    <xs:element name="email">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="visit"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Schema for visit tag-->
+    <xs:element name="visit">
+        <!-- SimpleType -> Element with text only -->
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-z]{14}@gmail.com"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Schema for phone tag-->
+    <xs:element name="phone">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="number" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="optional" default="mobile"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for number tag -->
+    <xs:element name="number">
+        <xs:simpleType>
+            <xs:restriction base="xs:positiveInteger">
+                <xs:pattern value="[0-9]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Schema for link tag -->
+    <xs:element name="link">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="class" type="xs:string" use="required" fixed="contact-button"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for cards tag -->
+    <xs:element name="cards">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="brands"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for brands tag -->
+    <xs:element name="brands">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="brand"/>
+                <xs:element ref="card" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for brand tag -->
+    <xs:element name="brand" type="xs:string"/>
+
+    <!--Schema for card tag -->
+    <xs:element name="card">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name"/>
+                <xs:element ref="card_img"/>
+                <xs:element ref="card_desc"/>
+                <xs:element ref="button"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for name tag -->
+    <xs:element name="name">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="brand" type="xs:string" use="optional" default="Amazon"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for card_img tag -->
+    <xs:element name="card_img">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="img_id" type="xs:ID" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for card_desc tag -->
+    <xs:element name="card_desc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="item" />
+                <xs:element ref="type"/>
+                <xs:element ref="sellingprice"/>
+                <xs:element ref="cost"/>
+                <xs:element ref="validity"/>
+                <xs:element ref="users"/>
+                <xs:element ref="discount"/>
+                <xs:element ref="policy" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="exchange" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="offer" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="spend" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="stock" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for item tag -->
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:simpleContent>
+                <!--Extension -> extends existing simpleType or ComplexType-->
+                <xs:extension base="xs:string">
+                    <!-- Required attribute with type ID-->
+                    <xs:attribute name="card_id" type="xs:ID" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for type tag -->
+    <xs:element name="type">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="cardtype" use="optional" fixed="digital"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for sellingprice tag -->
+    <xs:element name="sellingprice">
+        <!-- SimpleType -> Element with text only -->
+        <xs:simpleType>
+            <!-- Restriction -> define acceptable value for XML elements or attributes-->
+            <xs:restriction base="xs:positiveInteger">
+                <!--Pattern -> limit the content of element to numbers or letter -->
+                <xs:pattern value="[0-9]{3}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Schema for cost tag -->
+    <xs:element name="cost" type="xs:positiveInteger"/>
+
+    <!--Schema for validity tag -->
+    <xs:element name="validity">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- Enumeration -> limit content to a set of acceptable values-->
+                <xs:enumeration value="Validity: 365 days"/>
+                <xs:enumeration value="Validity: 6 months"/>
+                <xs:enumeration value="Validity: 3 months"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Schema for users tag -->
+    <xs:element name="users" type="xs:positiveInteger"/>
+
+    <!--Schema for discount tag -->
+    <xs:element name="discount" type="xs:positiveInteger"/>
+
+    <!--Schema for policy tag -->
+    <xs:element name="policy">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <!-- Optional attribute with string type-->
+                    <xs:attribute name="uses" type="xs:string" fixed="policy" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for exchange tag -->
+    <xs:element name="exchange">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="euses" type="xs:string" fixed="exchange" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for offer tag -->
+    <xs:element name="offer">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="offeruse" type="xs:string" fixed="offer" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for spend tag -->
+    <xs:element name="spend">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="use" type="xs:string" fixed="spend" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for stock tag -->
+    <xs:element name="stock">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="inuse" type="xs:string" fixed="stock" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for button tag -->
+    <xs:element name="button" type="xs:string"/>
+
+    <!--Schema for footer tag -->
+    <xs:element name="footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="giftstore"/>
+                <xs:element ref="storedetails"/>
+                <xs:element ref="follow"/>
+                <xs:element ref="info"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for giftstore tag -->
+    <xs:element name="giftstore">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="about"/>
+                <xs:element ref="us"/>
+                <xs:element ref="blog"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for about tag -->
+    <xs:element name="about" type="xs:string"/>
+
+    <!--Schema for us tag -->
+    <xs:element name="us" type="xs:string"/>
+
+    <!--Schema for blog tag -->
+    <xs:element name="blog" type="xs:string"/>
+
+    <!--Schema for storedetails tag -->
+    <xs:element name="storedetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="office"/>
+                <xs:element ref="location"/>
+                <xs:element ref="contact" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="site" />
+                <xs:element ref="website"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for office tag -->
+    <xs:element name="office" type="xs:string"/>
+
+    <!--Schema for location tag -->
+    <xs:element name="location" type="xs:string"/>
+
+    <!--Schema for contact tag -->
+    <xs:element name="contact">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:positiveInteger">
+                    <xs:attribute name="type" type="xs:string" default="mobile" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for site tag -->
+    <xs:element name="site">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-z]{14}@gmail.com"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Schema for website tag -->
+    <xs:element name="website">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="www.[a-z]{14}.com"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Schema for follow tag -->
+    <xs:element name="follow">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="followus"/>
+                <xs:element ref="fb"/>
+                <xs:element ref="insta"/>
+                <xs:element ref="twitter"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for followus tag -->
+    <xs:element name="followus" type="xs:string"/>
+
+    <!--Schema for fb tag -->
+    <xs:element name="fb">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="site" type="xs:string" fixed="social" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for insta tag -->
+    <xs:element name="insta">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="site" type="xs:string" fixed="social"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!--Schema for twitter tag -->
+    <xs:element name="twitter">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="site" type="xs:string" fixed="social"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Schema for info tag -->
+    <xs:element name="info" type="xs:string"/>
+
+</xs:schema>

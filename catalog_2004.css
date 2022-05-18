@@ -1,0 +1,603 @@
+/*
+CSS styling of the XML document
+*/
+
+/*styling the XML document */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* styling the main xml*/
+store {
+    margin: 0;
+    display: block;
+    background-color: #FFEEEE;  
+}
+
+/* styling navigation bar*/
+navigation {
+    background-color: white;
+    display: block;
+    position: relative;
+    padding: 10px;
+    top: 10px;
+    width: 100%;
+    overflow: hidden;
+    border: 1.5px solid yellow;
+    border-radius: 10px;
+}
+
+/* style for displaying logo */
+logo {
+    background-image: url(./img/logo2.jpg);
+    background-repeat: no-repeat;
+    display: inline;
+    position: absolute;
+    top: 1px;
+    height: 110px;
+    width: 18%;
+    border-radius: 10px;
+    opacity: 5; 
+}
+
+/* styling nav elements*/
+nav {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: inline;
+    position: relative;
+    float: right;
+    padding: 17px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #603601;   
+}
+
+/* applying hover effect to nav elements*/
+nav:hover {
+    background-color: #FFEBC1;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* styling the login attribute*/
+[name="login"] {  
+    border-radius: 25px;
+    background-color: rgb(237, 205, 187);
+}
+
+/* styling the cart attribute*/
+[name="Cart"] {
+    content: url(./img/trolley.png);   
+}
+
+/* adding hover effect to cart attribute*/
+[name="Cart"]:hover {
+    background-color: #FFEBC1;
+    border-radius: 25px;  
+}
+
+/* applying animation to details*/
+@keyframes fadefromtop {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    50% {
+        top: 50px;
+        opacity: 1;
+    }
+    100% {
+        top: 10px;
+        opacity: 1;
+    }
+}
+
+/* styling details tag*/
+details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    color: #F7F7F7;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width: 99%;
+    margin-left: 6px;
+    top: 15px;
+    border-radius: 10px;
+    padding: 50px 10px;
+    line-height: 1.5;
+    background: rgb(230, 255, 255);
+    box-shadow: 0 8px 32px 0 rgb(227, 183, 160);
+    backdrop-filter: blur( 14.0px);
+    -webkit-backdrop-filter: blur( 14.0px);
+    border-radius: 10px;
+    border: 1px solid  #aaa69d;
+    animation: fadefromtop 1.5s;
+    background-image: url(img/images.jpg);
+    background-repeat: no-repeat;
+    background-size: 100;
+    background-position: center;
+}
+
+/* style for displaying store description*/
+store_desc{
+    font-size: 50px;
+    margin-bottom: 2%;
+    text-align: center;
+    color: #F7F7F7;
+}
+
+/* animation for slide in*/
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+/* styling elements*/
+desc,contacts,visits,email,phone{
+    text-align: center;
+    justify-content: center;
+    line-height: 2;
+    font-size: 30px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+/* adding hover effects to the elements*/
+number:hover,
+visit:hover {
+    color: #F9FFA4;
+    cursor: pointer;
+}
+
+/* animation for the contact button*/
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+}
+
+/* style for displaying the link tag*/
+link {
+    position: relative;
+    width: 10%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #C37B89;
+    text-transform: uppercase;
+    color: azure;
+    margin-left: 45%;
+    margin-top: 15px;
+    text-align: center;
+    animation: wiggle 2s linear infinite;
+}
+
+/* adding hover effects to the link*/
+link:hover {
+    color: white;
+    background-color: #9E7777;
+    cursor: pointer;
+}
+
+/* style for displaying cards*/
+cards {
+    background-color: #EEEEEE;
+    box-shadow: 10px 10px 5px #041C32 ;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 15px; 
+}
+
+/* style for displaying brands*/
+brands {
+    background-color: #F9F9F9;
+    display: flex;
+    padding: 15px;
+    gap: 50px;
+    border-radius: 100px;
+    margin-top: 50px;
+    box-shadow: 10px 10px 10px #E7D4B5;
+    flex-wrap: wrap;
+    height: 70%;
+    border-style: groove;
+    row-gap: 1px;
+    order: 10px;
+}
+
+/* displaying brand styles*/
+brand {
+    font-size: 45px;
+    color: #DE8971;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    position: absolute;
+    text-align: center;
+    left: 635px;
+    margin-top: 0%;
+    
+}
+
+/* applying hover effects*/
+brand:hover{
+    color: #44bd32;
+    cursor: pointer;
+    text-shadow: #2C3A47;
+}
+
+/* styling card elements*/
+card {
+    display: list-item;
+    list-style-type: disc;
+    background-color: #E3CDC1;
+    width: 25%;
+    line-height: 1.5;
+    padding: 0.5em;
+    border-radius: 20px;
+    margin-left: 4.5%;
+    margin-bottom: 7%;
+    margin-top: 100px;
+    height: 500px;
+    box-shadow: 10px 10px 10px #E9D5DA;
+    border: 2px solid #7B6079;
+   
+}
+
+/* style for displaying name of the cards*/
+name { 
+    color: #980F5A;
+    position: relative;
+    font-size: 23px;
+    font-weight: bold;
+    bottom: 45px;
+    left: 11%;
+}
+
+/*
+Displaying the card images 
+*/
+[img_id|="amazonepay"]{
+    position: relative;
+    content: url(./img/amazonepay.png);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px; 
+    border: 3px solid #FFE61B; 
+}
+
+[img_id|="amazon"]{
+    position: relative;
+    content: url(./img/amazon.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B;  
+}
+
+[img_id|="amazonpay"]{
+    position: relative;
+    content: url(./img/amazonpay.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B; 
+}
+
+[img_id|="walmart1"]{
+    position: relative;
+    content: url(./img/walmart1.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B;
+}
+
+[img_id|="walmart2"]{
+    position: relative;
+    content: url(./img/walmart2.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B;
+}
+
+[img_id|="walmart3"]{
+    position: relative;
+    content: url(./img/walmart3.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B; 
+}
+
+[img_id|="adidas1"]{
+    position: relative;
+    content: url(./img/adidas1.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B;  
+}
+
+[img_id|="adidas2"]{
+    position: relative;
+    content: url(./img/adidas2.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B;  
+}
+
+[img_id|="adidas3"]{
+    position: relative;
+    content: url(./img/adidas3.jpg);
+    bottom: 10px;
+    margin-left: 40px;
+    width: 75%;
+    border-radius: 10px;
+    border: 3px solid #FFE61B; 
+}
+
+/*displaying style for card_desc tag*/
+card_desc {
+    border: 2px solid #FFF56D;
+    background-color: #EEEEEE;
+    display: block;
+    white-space: pre;
+    border-radius: 20px;
+    justify-content: center;
+    font-size: 18px;
+    height: 250px;   
+    
+}
+
+/* displaying Selling Price: before displaying other contents of selling price*/
+sellingprice::before{
+    content: "Selling Price: $";
+    color: black;
+}
+
+/* displaying Price: before displaying other contents of cost*/
+cost::before{
+    content: "Price: $";
+    color: black;
+}
+
+/* displaying Total Users: before displaying other contents of users*/
+users::before{
+    content: "Total users: ";
+    color: black;
+}
+
+/* displaying Discount: before displaying other contents of discount*/
+discount::before{
+    content: "Discount: ";
+    color: black;
+}
+
+/* displaying % after displaying other contents of discount*/
+discount::after{
+    content: " %";
+}
+
+/* styling elements*/
+item,type,sellingprice,cost,validity,users,discount,button{
+    position: relative;
+    bottom: 10px;
+    justify-content: center;
+     
+}
+
+/* styling optional elements*/
+policy,exchange,offer,spend,stock{
+    color: #FA1E0E;
+    position: relative;
+    bottom: 12px;
+    right: 20px;
+}
+
+/* styling the button*/
+button{
+    border-radius: 10px;
+    background-color: #E4EFE7;
+    padding: 12px;
+    margin-left: 32%; 
+    font-size: 18px;
+    border: 1.3px solid #CDAC81;
+}
+
+/* adding hover effects to the button*/
+button:hover{
+    background-color: #F4A9A8;
+    cursor: pointer;
+    color: white;
+}
+
+/* style for displaying footer section*/
+footer {
+    display: flex;
+    background-clip: content-box;
+    background-size: cover;
+    padding: 20px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #E8FFC2;  
+}
+
+/* style for displaying giftstore tag*/
+giftstore {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    line-height: 2;
+    font-size: 18px;  
+}
+
+/* styling about tag*/
+about{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    white-space: pre;
+}
+
+/* adding hover effects to the tags*/
+blog:hover,
+us:hover{
+    color: #43919B;
+    cursor: pointer;
+}
+
+/* style for displaying storedetails*/
+storedetails {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 35%;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/* styling office adn followus tag*/
+office,followus {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    white-space: pre;
+    font-size: 25px;
+}
+
+/* displaying E-MAIL: before displaying other contents of the site tag*/
+site::before{
+    content: "E-MAIL: ";
+    color: black;
+}
+
+/* displaying WEBSITE: before displaying other contents of the website tag*/
+website::before{
+    content: "WEBSITE: ";
+    color: black;
+}
+
+/* adding color to the tags*/
+contact,site,website {
+    color: #1a1a1a;
+}
+
+/* adding hover effects to the tags*/
+contact:hover,
+site:hover,
+website:hover {
+    color: #43919B;
+    cursor: pointer;
+}
+
+[type|="landline"]::before{
+    content: "LANDLINE: ";
+}
+
+contact::before{
+    content: "MOBILE: ";
+}
+
+/* style for displaying follow tag*/
+follow {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 75%;
+    line-height: 2.5;
+}
+
+/* styling the social media sites*/
+fb {
+    position: absolute;
+    content: url(./img/fb.png);
+    top: 55px;
+    left: 50px; 
+}
+
+insta {
+    position: absolute;
+    content: url(./img/instagram.png);
+    top: 105px;
+    left: 50px;
+}
+
+twitter {
+    position: absolute;
+    content: url(./img/twitter.png);
+    top: 155px;
+    left: 50px;
+}
+
+/* adding hover effects to the media sites*/
+fb:hover,
+insta:hover,
+twitter:hover {
+    background-color: #C7FFD8;
+    width: 45px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* styling info tag*/
+info {
+    font-size: 19px;
+    position: absolute;
+    text-align: center;
+    color: #666666;
+    margin-top: 255px;
+    margin-left: 480px;
+}
+
+/*Media Query for responsiveness of the the website.*/
+@media screen and (max-width:1088px) {
+    :root {
+       --headingFontSize: 45px;
+       --textFontSize: 20px;
+       --listFontSize: 15px;
+   }
+   card {
+       width: 300px;
+   }
+}
+/*Ending of Media Query for responsiveness of the the website.*/
+
+

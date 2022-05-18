@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CSS link-->
+<?xml-stylesheet href="catalog_2004.css" type="text/css"?>
+
+<!-- Schema link-->
+<store xsi:noNamespaceSchemaLocation="catalog_2004.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!--Creating navigation bar -->
+    <navigation>
+        <!-- inserting logo image-->
+        <logo></logo>
+        <nav name="login">Login</nav>
+        <nav name="help">Help</nav>
+        <nav name="Cart">Add to Cart</nav>
+        <nav name="about">About</nav>
+        <nav name="home">Home</nav>
+    </navigation>
+
+    <!-- Storing details about the store-->
+    <details>
+        <!-- name of the store-->
+        <store_desc header="title">WELCOME TO C GIFT CARD STORE. </store_desc>
+        <!-- description of the store-->
+        <desc>Everything about the gift cards in one place. Send gift anywhere and anytime.</desc>
+        <!-- location of store -->
+        <visits>We our located in Kathmandu, Nepal.</visits>
+        <!-- contacts details of the store-->
+        <contacts>--Contact us-- </contacts>
+        <email>E-mail: <visit>cgiftcardstore@gmail.com</visit>
+        </email>
+        <phone type="telephone">Telephone No: <number> 014357896</number>
+        </phone>
+        <phone type ="mobile">Mobile No: <number> 984523611</number>
+        </phone>
+        <link class="contact-button">Contact</link>
+    </details>
+
+    <!-- Storing details of the cards-->
+    <cards>
+        <!-- storing details of each card-->
+        <brands>
+            <brand>GIFT CARDS </brand>
+            <!-- details of each card -->
+            <card id="CD01">
+                <!-- name of the card-->
+                <name brand="Amazon">-Amazon US $25 Gift Card-</name>
+                <!-- inserting image of the card -->
+                <card_img img_id="amazonepay">Amazon Card</card_img>
+                <!-- description of the card-->
+                <card_desc>
+                    <item card_id="C01">Card Number: C01</item>                    <!-- card number of each card-->
+                    <type cardtype="digital">Type: Digital</type>                    <!-- type of the card-->
+                    <sellingprice>150</sellingprice>                    <!-- selling price of the card in store -->
+                    <cost>25</cost>                    <!-- price stored in the card-->
+                    <validity>Validity: 365 days</validity>                    <!-- validity of the card-->
+                    <users>12</users>                    <!-- total number of the users using the card-->
+                    <discount>10</discount>                    <!-- discount given in the card-->
+                    <policy uses="policy">Refund: Not Available</policy>                    <!-- refund policy of the card-->
+                </card_desc>
+                <!-- button to add the card to the card-->
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD02">
+                <name brand="Amazon">-Amazon US $35 Gift Card-</name>
+                <card_img img_id="amazon"></card_img>
+                <card_desc>
+                    <item card_id="C02">Card Number: C02</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>160</sellingprice>
+                    <cost>35</cost>
+                    <validity>Validity: 6 months</validity>
+                    <users>20</users>
+                    <discount>10</discount>
+                    <exchange euses="exchange">Exchange: Available </exchange>  <!-- exchange policy of the card-->
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD03">
+                <name>-Amazon Pay eGift Card-</name>
+                <card_img img_id="amazonpay"></card_img>
+                <card_desc>
+                    <item card_id="C03">Card Number: C03</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>145</sellingprice>
+                    <cost>45</cost>
+                    <validity>Validity: 365 days</validity>
+                    <users>2</users>
+                    <discount>5</discount>
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD04">
+                <name brand="Walmart">-Walmart US $70 Gift Card-</name>
+                <card_img img_id="walmart1"></card_img>
+                <card_desc>
+                    <item card_id="W01">Card Number: W01</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>155</sellingprice>
+                    <cost>70</cost>
+                    <validity>Validity: 3 months</validity>
+                    <users>5</users>
+                    <discount>10</discount>
+                    <offer offeruse="offer">Buy One Get One Free !! </offer>   <!-- offer policy of the card-->
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD05">
+                <name brand="Walmart">-Walmart Gift Card-</name>
+                <card_img img_id="walmart2"></card_img>
+                <card_desc>
+                    <item card_id="W02">Card Number: W02</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>185</sellingprice>
+                    <cost>25</cost>
+                    <validity>Validity: 365 days</validity>
+                    <users>22</users>
+                    <discount>10</discount>
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD06">
+                <name brand="Walmart">-Walmart Membership Gift-</name>
+                <card_img img_id="walmart3"></card_img>
+                <card_desc>
+                    <item card_id="W03">Card Number: W03</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>195</sellingprice>
+                    <cost>35</cost>
+                    <validity>Validity: 3 months</validity>
+                    <users>12</users>
+                    <discount>10</discount>
+                    <spend use="spend">Used only on Walmart!!</spend>   <!-- spend policy of the card-->
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD07">
+                <name brand="Adidas">-Adidas US $70 Gift Card-</name>
+                <card_img img_id="adidas1"></card_img>
+                <card_desc>
+                    <item card_id="A01">Card Number: A01</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>125</sellingprice>
+                    <cost>70</cost>
+                    <validity>Validity: 365 days</validity>
+                    <users>8</users>
+                    <discount>10</discount>
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD08">
+                <name brand="Adidas">-Adidas Gift Card-</name>
+                <card_img img_id="adidas2"></card_img>
+                <card_desc>
+                    <item card_id="A02">Card Number: A02</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>155</sellingprice>
+                    <cost>80</cost>
+                    <validity>Validity: 365 days</validity>
+                    <users>10</users>
+                    <discount>5</discount>
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+
+            <card id="CD09">
+                <name brand="Adidas">-Adidas 250.000T Gift Card-</name>
+                <card_img img_id="adidas3"></card_img>
+                <card_desc>
+                    <item card_id="A03">Card Number: A03</item>
+                    <type>Type: Digital</type>
+                    <sellingprice>125</sellingprice>
+                    <cost>50</cost>
+                    <validity>Validity: 365 days</validity>
+                    <users>2</users>
+                    <discount>5</discount>
+                    <stock inuse="stock">**Out of Stock**</stock>  <!-- stock of the card-->
+                </card_desc>
+                <button>Add to Cart</button>
+            </card>
+        </brands>
+    </cards>
+
+    <!-- footer section for the store-->
+    <footer>
+        <!-- information of the store-->
+        <giftstore>
+            <about>C GIFT CARD STORE</about>
+            <us>ABOUT US</us>
+            <blog>BLOG</blog>
+        </giftstore>
+
+        <!-- conatct information of the store-->
+        <storedetails>
+            <office>OFFICE</office>
+            <location>LONDON, UNITED KINGDOM</location>
+            <contact type="landline">014357896</contact>
+            <contact >984523611</contact>
+            <site >cgiftcardstore@gmail.com</site>
+            <website >www.cgiftcardstore.com</website>
+        </storedetails>
+
+        <!-- follow sites of the store-->
+        <follow>
+            <followus>FOLLOW US</followus>
+            <fb site="social">Facebook</fb>
+            <insta site="social">Instagram</insta>
+            <twitter site="social">Twitter</twitter>
+        </follow>
+
+        <info>&#169; C Gift Card Store Company. All rights reserved.</info>
+    </footer>
+    <!-- ending of the footer section-->
+</store>
